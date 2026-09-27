@@ -1,6 +1,6 @@
 {
   "name": "dsh-continue-watchdog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Continue, bounded wait, or unlock after idle for DeepSeek Harness. Port of pi-continue-watchdog.",
   "type": "module",
   "main": "src/index.js",

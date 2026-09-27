@@ -10,8 +10,9 @@ export const inject = ["agents"];
 export const Config = z.object({
 	idleDelaySeconds: z.number().min(0).default(10),
 	maxRetries: z.number().step(1).min(1).max(10).default(10),
-	decisionPrompt: z.string().min(1).default(""),
-	continuePrompt: z.string().min(1).default(""),
+	// "" = use the built-in prompt (blankRow drops it); min(1) here would reject the default itself.
+	decisionPrompt: z.string().default(""),
+	continuePrompt: z.string().default(""),
 	reasonTypes: z.array(z.string()).default([]),
 	continueReasonTypes: z.array(z.string()).default([]),
 	unlockShortcut: z.union([z.string(), z.const(false)]).default("alt+u"),
