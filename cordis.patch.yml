@@ -1,0 +1,11 @@
+# dsh-continue-watchdog bundle patch.
+# User Pi config is package enablement only (no pi-continue-watchdog.json),
+# so every knob stays at the Pi built-in default. idleDelaySeconds is accepted
+# and ignored; the inquiry fence is fixed at 10s.
+- insert:
+    - id: continue-watchdog
+      name: "dsh-continue-watchdog"
+      config:
+        idleDelaySeconds: 10
+        maxRetries: 10
+        unlockShortcut: alt+u
